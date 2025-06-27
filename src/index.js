@@ -132,6 +132,10 @@ function showLaptopInterface() {
                     <div class="icon">⚡</div>
                     <div class="icon-label">Skills</div>
                 </div>
+                <div class="desktop-icon" data-window="cv">
+                    <div class="icon">📄</div>
+                    <div class="icon-label">CV/Resume</div>
+                </div>
                 <div class="desktop-icon" data-window="contact">
                     <div class="icon">📬</div>
                     <div class="icon-label">Contact</div>
@@ -221,6 +225,28 @@ function showLaptopInterface() {
                     </div>
                 </div>
             </div>
+            
+            <div class="window" id="cv-window">
+                <div class="window-header">
+                    <span>CV/Resume - ${portfolioContent.personal.name}</span>
+                    <div class="window-controls">
+                        <span class="minimize">−</span>
+                        <span class="maximize">□</span>
+                        <span class="close" data-window="cv">×</span>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="cv-header">
+                        <div class="language-switcher">
+                            <button class="lang-btn active" data-lang="en">🇺🇸 English</button>
+                            <button class="lang-btn" data-lang="de">🇩🇪 Deutsch</button>
+                        </div>
+                    </div>
+                    <div id="cv-content">
+                        <!-- CV content will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
         </div>
     `;
     
@@ -228,6 +254,12 @@ function showLaptopInterface() {
     
     // Add event listeners for tabs and window controls
     setupLaptopInteractions();
+    
+    // Setup CV language switching
+    setupCVLanguageSwitching();
+    
+    // Load initial CV content
+    loadCVContent('en');
 }
 
 function hideLaptopInterface() {
@@ -333,20 +365,26 @@ function setupLaptopInteractions() {
             const window = maximizeBtn.closest('.window');
             
             if (window.classList.contains('maximized')) {
-                // Restore window
+                // Restore window to small windowed size
                 window.classList.remove('maximized');
-                window.style.top = '15px';
-                window.style.left = '15px';
-                window.style.right = '15px';
-                window.style.bottom = '65px';
+                window.style.top = '50px';
+                window.style.left = '50px';
+                window.style.right = 'auto';
+                window.style.bottom = 'auto';
+                window.style.width = '450px';
+                window.style.height = '350px';
+                window.style.zIndex = '204';
                 maximizeBtn.textContent = '□';
             } else {
-                // Maximize window
+                // Maximize window - remove all positioning constraints
                 window.classList.add('maximized');
-                window.style.top = '0';
-                window.style.left = '0';
-                window.style.right = '0';
-                window.style.bottom = '50px';
+                window.style.top = '';
+                window.style.left = '';
+                window.style.right = '';
+                window.style.bottom = '';
+                window.style.width = '';
+                window.style.height = '';
+                window.style.zIndex = '208';
                 maximizeBtn.textContent = '❐';
             }
         });
@@ -481,6 +519,129 @@ function setupLaptopInteractions() {
     });
 }
 
+function setupCVLanguageSwitching() {
+    // Language switcher buttons
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('lang-btn')) {
+            const lang = e.target.dataset.lang;
+            
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // Load CV content in selected language
+            loadCVContent(lang);
+        }
+    });
+}
+
+function loadCVContent(language) {
+    const cvContent = document.getElementById('cv-content');
+    if (!cvContent) return;
+    
+    const cv = portfolioContent.cv[language];
+    if (!cv) return;
+    
+    const experienceHTML = cv.experience.map(exp => `
+        <div class="cv-section-item">
+            <div class="cv-item-header">
+                <h4>${exp.position}</h4>
+                <span class="cv-period">${exp.period}</span>
+            </div>
+            <div class="cv-item-subheader">
+                <strong>${exp.company}</strong> - ${exp.location}
+            </div>
+            <ul class="cv-responsibilities">
+                ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+            </ul>
+        </div>
+    `).join('');
+    
+    const educationHTML = cv.education.map(edu => `
+        <div class="cv-section-item">
+            <div class="cv-item-header">
+                <h4>${edu.degree}</h4>
+                <span class="cv-period">${edu.period}</span>
+            </div>
+            <div class="cv-item-subheader">
+                <strong>${edu.institution}</strong> - ${edu.location}
+            </div>
+            <p class="cv-details">${edu.details}</p>
+        </div>
+    `).join('');
+    
+    const skillsHTML = cv.skills.map(skillCategory => `
+        <div class="cv-skills-category">
+            <h4>${skillCategory.category}</h4>
+            <div class="cv-skill-tags">
+                ${skillCategory.items.map(skill => `<span class="cv-skill-tag">${skill}</span>`).join('')}
+            </div>
+        </div>
+    `).join('');
+    
+    const languagesHTML = cv.languages.map(lang => `
+        <div class="cv-language-item">
+            <strong>${lang.language}</strong>: ${lang.level}
+        </div>
+    `).join('');
+    
+    const certificationsHTML = cv.certifications ? cv.certifications.map(cert => `
+        <div class="cv-certification-item">
+            <strong>${cert.name}</strong><br>
+            <small>${cert.issuer} (${cert.date})</small>
+        </div>
+    `).join('') : '';
+    
+    cvContent.innerHTML = `
+        <div class="cv-personal-info">
+            <h2>${cv.personal.name}</h2>
+            <h3>${cv.personal.title}</h3>
+            <div class="cv-contact-info">
+                <p>📧 ${cv.personal.email}</p>
+                <p>📱 ${cv.personal.phone}</p>
+                <p>📍 ${cv.personal.location}</p>
+                <p>🏛️ ${cv.personal.nationality}</p>
+            </div>
+        </div>
+        
+        <div class="cv-section">
+            <h3>📝 ${language === 'en' ? 'Professional Summary' : 'Berufliche Zusammenfassung'}</h3>
+            <p class="cv-summary">${cv.summary}</p>
+        </div>
+        
+        <div class="cv-section">
+            <h3>💼 ${language === 'en' ? 'Work Experience' : 'Berufserfahrung'}</h3>
+            ${experienceHTML}
+        </div>
+        
+        <div class="cv-section">
+            <h3>🎓 ${language === 'en' ? 'Education' : 'Bildung'}</h3>
+            ${educationHTML}
+        </div>
+        
+        <div class="cv-section">
+            <h3>🛠️ ${language === 'en' ? 'Technical Skills' : 'Technische Fähigkeiten'}</h3>
+            ${skillsHTML}
+        </div>
+        
+        <div class="cv-section">
+            <h3>🌐 ${language === 'en' ? 'Languages' : 'Sprachen'}</h3>
+            <div class="cv-languages">
+                ${languagesHTML}
+            </div>
+        </div>
+        
+        ${certificationsHTML ? `
+        <div class="cv-section">
+            <h3>🏆 ${language === 'en' ? 'Certifications' : 'Zertifikate'}</h3>
+            <div class="cv-certifications">
+                ${certificationsHTML}
+            </div>
+        </div>
+        ` : ''}
+    `;
+}
+
 function openWindow(windowName) {
     const windowId = windowName + '-window';
     const window = document.getElementById(windowId);
@@ -499,6 +660,7 @@ function openWindow(windowName) {
             'about': 'About Me',
             'projects': 'Projects', 
             'skills': 'Skills',
+            'cv': 'CV/Resume',
             'contact': 'Contact'
         };
         
@@ -518,16 +680,26 @@ function openWindow(windowName) {
     tab.classList.add('active');
     tab.style.opacity = '1';
     
-    // Position window with slight offset for multiple windows
-    const existingWindows = document.querySelectorAll('.window:not(.minimized)').length;
-    const offset = existingWindows * 30;
+    // Open window in maximized mode by default
+    window.classList.add('maximized');
+    window.style.top = '';
+    window.style.left = '';
+    window.style.right = '';
+    window.style.bottom = '';
+    window.style.width = '';
+    window.style.height = '';
+    window.style.zIndex = '208';
     
-    window.style.top = (50 + offset) + 'px';
-    window.style.left = (50 + offset) + 'px';
-    window.style.right = 'auto';
-    window.style.bottom = 'auto';
-    window.style.width = '450px';
-    window.style.height = '350px';
+    // Update maximize button to show restore state
+    const maximizeBtn = window.querySelector('.maximize');
+    if (maximizeBtn) {
+        maximizeBtn.textContent = '❐';
+    }
+    
+    // Load CV content if it's the CV window
+    if (windowName === 'cv') {
+        loadCVContent('en');
+    }
 }
 
 // Make toggleLaptopMode globally accessible
