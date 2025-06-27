@@ -600,7 +600,8 @@ function loadCVContent(language) {
                 <p>📧 ${cv.personal.email}</p>
                 <p>📱 ${cv.personal.phone}</p>
                 <p>📍 ${cv.personal.location}</p>
-                <p>🏛️ ${cv.personal.nationality}</p>
+                <p>� ${cv.personal.dateOfBirth}</p>
+                <p>�🏛️ ${cv.personal.nationality}</p>
             </div>
         </div>
         
@@ -615,7 +616,7 @@ function loadCVContent(language) {
         </div>
         
         <div class="cv-section">
-            <h3>🎓 ${language === 'en' ? 'Education' : 'Bildung'}</h3>
+            <h3>🎓 ${language === 'en' ? 'Education & Training' : 'Bildung & Ausbildung'}</h3>
             ${educationHTML}
         </div>
         
@@ -631,12 +632,26 @@ function loadCVContent(language) {
             </div>
         </div>
         
+        ${cv.mobility ? `
+        <div class="cv-section">
+            <h3>🚗 ${language === 'en' ? 'Mobility' : 'Mobilität'}</h3>
+            <p class="cv-summary">${cv.mobility}</p>
+        </div>
+        ` : ''}
+        
         ${certificationsHTML ? `
         <div class="cv-section">
             <h3>🏆 ${language === 'en' ? 'Certifications' : 'Zertifikate'}</h3>
             <div class="cv-certifications">
                 ${certificationsHTML}
             </div>
+        </div>
+        ` : ''}
+        
+        ${cv.additionalInfo ? `
+        <div class="cv-section">
+            <h3>💡 ${language === 'en' ? 'Additional Information' : 'Zusätzliche Informationen'}</h3>
+            <p class="cv-summary">${cv.additionalInfo}</p>
         </div>
         ` : ''}
     `;

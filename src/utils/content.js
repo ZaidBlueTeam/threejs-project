@@ -3,243 +3,196 @@
 
 export const portfolioContent = {
     personal: {
-        name: "Zaid Al Hamadani",
-        title: "Full Stack Developer & 3D Web Enthusiast",
-        tagline: "Building immersive digital experiences with modern web technologies"
+        name: "Zaid Alhamadani",
+        title: "Web Designer & IT Specialist",
+        tagline: "Creating innovative digital experiences with modern web technologies"
     },
     
     about: {
-        greeting: "Hello, I'm Zaid Al Hamadani! 👋",
-        description: `I'm a passionate developer who loves creating innovative digital experiences. This 3D laptop interface is just one example of how I like to push creative boundaries in web development.
+        greeting: "Hello, I'm Zaid Alhamadani! 👋",
+        description: `I'm a passionate web designer and IT specialist who loves creating innovative digital experiences. This 3D laptop interface showcases my skills in combining creativity with technology.
 
-My journey in programming started with curiosity and has evolved into a passion for building interactive, user-friendly applications that solve real-world problems.`,
+Currently, I'm actively seeking employment opportunities while completing my educational qualifications. My journey in technology started with curiosity and has evolved into expertise in web design, digital media, and various IT applications.`,
         motivation: "Innovation, creativity, and the endless possibilities of modern web technologies.",
-        additionalInfo: `I specialize in creating unique user experiences that combine functionality with visual appeal. Whether it's a complex web application or an interactive 3D portfolio like this one, I believe in making technology both powerful and accessible.`
+        additionalInfo: `I specialize in web design, digital graphics, and creating user-friendly interfaces. Whether it's designing with Photoshop, building websites with CSS, or creating interactive experiences like this portfolio, I believe in making technology both powerful and accessible.
+
+My multilingual abilities (Arabic, German, English) and technical skills make me well-suited for diverse projects and international collaboration.`
     },
-    
-    // CV/Resume Section with multi-language support
+      // CV/Resume Section with multi-language support
     cv: {
         en: {
             personal: {
-                name: "Zaid Al Hamadani",
-                title: "Full Stack Developer",
-                email: "zaid.alhamadani@example.com",
-                phone: "+49 XXX XXXXXXX",
-                location: "Germany",
-                dateOfBirth: "YYYY-MM-DD",
-                nationality: "Iraqi/German"
+                name: "Zaid Alhamadani",
+                title: "Web Designer & IT Specialist",
+                email: "zaidammar754@gmail.com",
+                phone: "+43 660 9530159",
+                location: "Blockhausgasse 11/4, 3100 St. Pölten, Austria",
+                dateOfBirth: "03.11.2005",
+                nationality: "Iraqi"
             },
-            summary: "Passionate Full Stack Developer with expertise in modern web technologies and 3D graphics. Experienced in creating innovative digital solutions and interactive web applications. Strong background in both frontend and backend development with a focus on creating seamless user experiences.",
+            summary: "Motivated and skilled young professional with expertise in web design, IT applications, and digital media. Currently seeking employment opportunities while completing educational qualifications. Strong technical skills in design software, web technologies, and multiple language proficiency.",
             
             experience: [
                 {
-                    position: "Full Stack Developer",
-                    company: "Tech Company GmbH",
-                    location: "Berlin, Germany",
-                    period: "01/2022 - Present",
+                    position: "Job Seeker",
+                    company: "AMS (Public Employment Service)",
+                    location: "St. Pölten, Austria",
+                    period: "01.07.2023 - Present",
                     responsibilities: [
-                        "Developed and maintained modern web applications using React, Node.js, and MongoDB",
-                        "Implemented responsive designs and improved user experience by 40%",
-                        "Collaborated with cross-functional teams in agile development environment",
-                        "Led frontend development for 5+ major client projects",
-                        "Mentored junior developers and conducted code reviews"
-                    ]
-                },
-                {
-                    position: "Frontend Developer",
-                    company: "Digital Solutions Inc.",
-                    location: "Munich, Germany",
-                    period: "06/2020 - 12/2021",
-                    responsibilities: [
-                        "Built interactive user interfaces using Vue.js and React",
-                        "Optimized application performance resulting in 30% faster load times",
-                        "Integrated RESTful APIs and implemented state management",
-                        "Worked closely with UX/UI designers to implement pixel-perfect designs"
-                    ]
-                },
-                {
-                    position: "Junior Web Developer",
-                    company: "StartUp Studio",
-                    location: "Hamburg, Germany",
-                    period: "02/2019 - 05/2020",
-                    responsibilities: [
-                        "Developed responsive websites using HTML5, CSS3, and JavaScript",
-                        "Implemented basic backend functionality with PHP and MySQL",
-                        "Participated in daily standups and sprint planning meetings",
-                        "Maintained and updated existing client websites"
+                        "Actively seeking employment opportunities in IT and web design",
+                        "Participating in career development programs",
+                        "Enhancing technical skills and qualifications",
+                        "Working with employment counselors to identify suitable positions"
                     ]
                 }
             ],
             
             education: [
                 {
-                    degree: "Master of Science in Computer Science",
-                    institution: "Technical University of Munich",
-                    location: "Munich, Germany", 
-                    period: "10/2017 - 09/2019",
-                    details: "Focus on Software Engineering and Web Technologies. Thesis: 'Interactive 3D Web Applications using Three.js'"
+                    degree: "ZIB Training (JBZ 2.0) - Compulsory School Leaving Certificate & Career Orientation",
+                    institution: "ZIB Training Center",
+                    location: "Austria",
+                    period: "05.08.2024 - 30.04.2025",
+                    details: "Currently completing compulsory education certificate with focus on career orientation and professional development"
                 },
                 {
-                    degree: "Bachelor of Science in Information Technology",
-                    institution: "University of Applied Sciences",
-                    location: "Frankfurt, Germany",
-                    period: "09/2014 - 08/2017",
-                    details: "Specialized in Web Development and Database Systems. Final Grade: 1.8 (Good)"
+                    degree: "Pre-vocational Training Support",
+                    institution: "Ausbildungsfit Mostviertel",
+                    location: "Loosdorf, Austria",
+                    period: "02.10.2023 - 05.08.2024",
+                    details: "Preparatory program for vocational training and career development"
+                },
+                {
+                    degree: "Special Education School (Allgemeine Sonderschule)",
+                    institution: "School St. Pölten-Mitte",
+                    location: "St. Pölten, Austria",
+                    period: "04.09.2018 - 01.07.2023",
+                    details: "Completed secondary education with individualized support"
+                },
+                {
+                    degree: "Primary & Middle School Education",
+                    institution: "Schools in Baghdad",
+                    location: "Baghdad, Iraq",
+                    period: "04.09.2009 - 05.11.2017",
+                    details: "Completed primary education and began middle school before relocating to Austria"
                 }
             ],
             
             skills: [
                 {
-                    category: "Programming Languages",
-                    items: ["JavaScript (ES6+)", "TypeScript", "Python", "PHP", "Java", "C++"]
+                    category: "Programming & Web Technologies",
+                    items: ["CSS (Intermediate)", "Web Design (Intermediate)", "HTML", "JavaScript Basics"]
                 },
                 {
-                    category: "Frontend Technologies",
-                    items: ["React", "Vue.js", "Angular", "Three.js", "WebGL", "HTML5", "CSS3", "SASS/SCSS"]
+                    category: "Design & Multimedia",
+                    items: ["Photoshop (Advanced)", "Figma (Intermediate)", "Audacity (Advanced)", "Digital Design"]
                 },
                 {
-                    category: "Backend Technologies", 
-                    items: ["Node.js", "Express.js", "Django", "Laravel", "RESTful APIs", "GraphQL"]
+                    category: "Microsoft Office Suite",
+                    items: ["Microsoft Word (Intermediate)", "Microsoft Excel (Intermediate)", "Microsoft PowerPoint (Intermediate)"]
                 },
                 {
-                    category: "Databases",
-                    items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"]
-                },
-                {
-                    category: "Tools & Technologies",
-                    items: ["Git", "Docker", "Webpack", "Vite", "AWS", "Linux", "Nginx", "Jenkins"]
+                    category: "Personal Competencies",
+                    items: ["Flexibility", "Diligence", "Sharp Thinking", "Accuracy", "Problem Solving"]
                 }
             ],
             
             languages: [
-                { language: "German", level: "Native" },
-                { language: "English", level: "Fluent (C1)" },
-                { language: "Arabic", level: "Native" }
+                { language: "Arabic", level: "Native" },
+                { language: "German", level: "B1 - Intermediate" },
+                { language: "English", level: "B2 - Upper-Intermediate" }
             ],
             
-            certifications: [
-                {
-                    name: "AWS Certified Developer - Associate",
-                    issuer: "Amazon Web Services",
-                    date: "2023"
-                },
-                {
-                    name: "React Developer Certification",
-                    issuer: "Meta (Facebook)",
-                    date: "2022"
-                }
-            ]
+            mobility: "Able to reach workplace by public transport",
+            
+            additionalInfo: "Currently actively seeking employment opportunities in IT, web design, and related fields. Committed to continuous learning and professional development."
         },
         de: {
             personal: {
-                name: "Zaid Al Hamadani",
-                title: "Full Stack Entwickler",
-                email: "zaid.alhamadani@example.com", 
-                phone: "+49 XXX XXXXXXX",
-                location: "Deutschland",
-                dateOfBirth: "YYYY-MM-DD",
-                nationality: "Irakisch/Deutsch"
+                name: "Zaid Alhamadani",
+                title: "Web Designer & IT-Spezialist",
+                email: "zaidammar754@gmail.com",
+                phone: "+43 660 9530159",
+                location: "Blockhausgasse 11/4, 3100 St. Pölten, Österreich",
+                dateOfBirth: "03.11.2005",
+                nationality: "Irakisch"
             },
-            summary: "Leidenschaftlicher Full Stack Entwickler mit Expertise in modernen Web-Technologien und 3D-Grafiken. Erfahren in der Entwicklung innovativer digitaler Lösungen und interaktiver Webanwendungen. Starker Hintergrund in Frontend- und Backend-Entwicklung mit Fokus auf nahtlose Benutzererfahrungen.",
+            summary: "Motivierter und qualifizierter junger Fachmann mit Expertise in Webdesign, IT-Anwendungen und digitalen Medien. Derzeit auf Arbeitssuche während der Vervollständigung der Bildungsqualifikationen. Starke technische Fähigkeiten in Design-Software, Web-Technologien und mehrsprachige Kompetenz.",
             
             experience: [
                 {
-                    position: "Full Stack Entwickler",
-                    company: "Tech Company GmbH",
-                    location: "Berlin, Deutschland",
-                    period: "01/2022 - Heute",
+                    position: "Arbeitssuchend",
+                    company: "AMS (Arbeitsmarktservice)",
+                    location: "St. Pölten, Österreich",
+                    period: "01.07.2023 - Heute",
                     responsibilities: [
-                        "Entwicklung und Wartung moderner Webanwendungen mit React, Node.js und MongoDB",
-                        "Implementierung responsiver Designs und Verbesserung der Benutzererfahrung um 40%",
-                        "Zusammenarbeit mit funktionsübergreifenden Teams in agiler Entwicklungsumgebung",
-                        "Leitung der Frontend-Entwicklung für 5+ große Kundenprojekte",
-                        "Mentoring von Junior-Entwicklern und Durchführung von Code-Reviews"
-                    ]
-                },
-                {
-                    position: "Frontend Entwickler",
-                    company: "Digital Solutions Inc.",
-                    location: "München, Deutschland",
-                    period: "06/2020 - 12/2021",
-                    responsibilities: [
-                        "Entwicklung interaktiver Benutzeroberflächen mit Vue.js und React",
-                        "Optimierung der Anwendungsleistung mit 30% schnelleren Ladezeiten",
-                        "Integration von RESTful APIs und Implementierung von State Management",
-                        "Enge Zusammenarbeit mit UX/UI-Designern für pixelgenaue Implementierungen"
-                    ]
-                },
-                {
-                    position: "Junior Web Entwickler",
-                    company: "StartUp Studio",
-                    location: "Hamburg, Deutschland",
-                    period: "02/2019 - 05/2020",
-                    responsibilities: [
-                        "Entwicklung responsiver Websites mit HTML5, CSS3 und JavaScript",
-                        "Implementierung grundlegender Backend-Funktionalität mit PHP und MySQL",
-                        "Teilnahme an täglichen Standups und Sprint-Planungsmeetings",
-                        "Wartung und Aktualisierung bestehender Kunden-Websites"
+                        "Aktive Suche nach Beschäftigungsmöglichkeiten in IT und Webdesign",
+                        "Teilnahme an Karriereentwicklungsprogrammen",
+                        "Verbesserung technischer Fähigkeiten und Qualifikationen",
+                        "Zusammenarbeit mit Berufsberatern zur Identifizierung geeigneter Positionen"
                     ]
                 }
             ],
             
             education: [
                 {
-                    degree: "Master of Science Informatik",
-                    institution: "Technische Universität München",
-                    location: "München, Deutschland",
-                    period: "10/2017 - 09/2019",
-                    details: "Schwerpunkt Software Engineering und Web-Technologien. Abschlussarbeit: 'Interaktive 3D-Webanwendungen mit Three.js'"
+                    degree: "ZIB Training (JBZ 2.0) - Pflichtschulabschluss & Berufsorientierung",
+                    institution: "ZIB Trainingszentrum",
+                    location: "Österreich",
+                    period: "05.08.2024 - 30.04.2025",
+                    details: "Derzeit Abschluss des Pflichtschulabschlusses mit Fokus auf Berufsorientierung und berufliche Entwicklung"
                 },
                 {
-                    degree: "Bachelor of Science Informationstechnik",
-                    institution: "Hochschule für Angewandte Wissenschaften",
-                    location: "Frankfurt, Deutschland",
-                    period: "09/2014 - 08/2017",
-                    details: "Spezialisierung auf Web-Entwicklung und Datenbanksysteme. Abschlussnote: 1,8 (Gut)"
+                    degree: "Ausbildungsfit",
+                    institution: "Ausbildungsfit Mostviertel",
+                    location: "Loosdorf, Österreich",
+                    period: "02.10.2023 - 05.08.2024",
+                    details: "Vorbereitungsprogramm für Berufsausbildung und Karriereentwicklung"
+                },
+                {
+                    degree: "Allgemeine Sonderschule",
+                    institution: "Schule St. Pölten-Mitte",
+                    location: "St. Pölten, Österreich",
+                    period: "04.09.2018 - 01.07.2023",
+                    details: "Abgeschlossene Sekundarbildung mit individueller Unterstützung"
+                },
+                {
+                    degree: "Grund- & Mittelschulbildung",
+                    institution: "Schulen in Bagdad",
+                    location: "Bagdad, Irak",
+                    period: "04.09.2009 - 05.11.2017",
+                    details: "Abgeschlossene Grundschulbildung und begonnene Mittelschule vor Umzug nach Österreich"
                 }
             ],
             
             skills: [
                 {
-                    category: "Programmiersprachen",
-                    items: ["JavaScript (ES6+)", "TypeScript", "Python", "PHP", "Java", "C++"]
+                    category: "Programmierung & Web-Technologien",
+                    items: ["CSS (Mittelstufe)", "Web Design (Mittelstufe)", "HTML", "JavaScript Grundlagen"]
                 },
                 {
-                    category: "Frontend-Technologien",
-                    items: ["React", "Vue.js", "Angular", "Three.js", "WebGL", "HTML5", "CSS3", "SASS/SCSS"]
+                    category: "Design & Multimedia",
+                    items: ["Photoshop (Fortgeschritten)", "Figma (Mittelstufe)", "Audacity (Fortgeschritten)", "Digitales Design"]
                 },
                 {
-                    category: "Backend-Technologien",
-                    items: ["Node.js", "Express.js", "Django", "Laravel", "RESTful APIs", "GraphQL"]
+                    category: "Microsoft Office Suite",
+                    items: ["Microsoft Word (Mittelstufe)", "Microsoft Excel (Mittelstufe)", "Microsoft PowerPoint (Mittelstufe)"]
                 },
                 {
-                    category: "Datenbanken",
-                    items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"]
-                },
-                {
-                    category: "Tools & Technologien",
-                    items: ["Git", "Docker", "Webpack", "Vite", "AWS", "Linux", "Nginx", "Jenkins"]
+                    category: "Persönliche Kompetenzen",
+                    items: ["Flexibilität", "Sorgfalt", "Scharfes Denken", "Genauigkeit", "Problemlösung"]
                 }
             ],
             
             languages: [
-                { language: "Deutsch", level: "Muttersprache" },
-                { language: "Englisch", level: "Fließend (C1)" },
-                { language: "Arabisch", level: "Muttersprache" }
+                { language: "Arabisch", level: "Muttersprache" },
+                { language: "Deutsch", level: "B1 - Mittelstufe" },
+                { language: "Englisch", level: "B2 - Obere Mittelstufe" }
             ],
             
-            certifications: [
-                {
-                    name: "AWS Certified Developer - Associate",
-                    issuer: "Amazon Web Services",
-                    date: "2023"
-                },
-                {
-                    name: "React Developer Certification",
-                    issuer: "Meta (Facebook)",
-                    date: "2022"
-                }
-            ]
+            mobility: "Kann den Arbeitsplatz mit öffentlichen Verkehrsmitteln erreichen",
+            
+            additionalInfo: "Derzeit aktiv auf der Suche nach Beschäftigungsmöglichkeiten in IT, Webdesign und verwandten Bereichen. Engagiert für kontinuierliches Lernen und berufliche Entwicklung."
         }
     },
     
@@ -323,35 +276,35 @@ My journey in programming started with curiosity and has evolved into a passion 
             {
                 icon: "📧",
                 title: "Email",
-                value: "zaid.alhamadani@example.com",
-                link: "mailto:zaid.alhamadani@example.com"
+                value: "zaidammar754@gmail.com",
+                link: "mailto:zaidammar754@gmail.com"
             },
             {
-                icon: "💼",
+                icon: "�",
+                title: "Phone",
+                value: "+43 660 9530159",
+                link: "tel:+436609530159"
+            },
+            {
+                icon: "�",
+                title: "Location",
+                value: "St. Pölten, Austria",
+                link: "#"
+            },
+            {
+                icon: "�",
                 title: "LinkedIn",
-                value: "linkedin.com/in/zaidalhamadani",
+                value: "Connect with me",
                 link: "https://linkedin.com/in/zaidalhamadani"
             },
             {
-                icon: "🐙",
-                title: "GitHub",
-                value: "github.com/zaidalhamadani",
-                link: "https://github.com/zaidalhamadani"
-            },
-            {
-                icon: "🐦",
-                title: "Twitter",
-                value: "@zaidalhamadani",
-                link: "https://twitter.com/zaidalhamadani"
-            },
-            {
-                icon: "🌐",
+                icon: "�",
                 title: "Portfolio",
-                value: "zaidalhamadani.dev",
-                link: "https://zaidalhamadani.dev"
+                value: "View my work",
+                link: "#"
             }
         ],
-        availability: "Currently available for freelance projects and full-time opportunities."
+        availability: "Currently actively seeking employment opportunities in IT, web design, and related fields."
     },
     
     // Language settings
