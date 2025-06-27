@@ -373,9 +373,16 @@ function setupLaptopInteractions() {
                 window.style.transform = 'scale(1) translateY(0)';
                 window.style.opacity = '1';
                 
-                // Remove tab
-                if (tab) {
+                // Remove tab only, never touch desktop icons
+                if (tab && tab.classList.contains('tab')) {
                     tab.remove();
+                }
+                
+                // Ensure desktop icons remain visible
+                const desktopIcons = document.querySelector('.desktop-icons');
+                if (desktopIcons) {
+                    desktopIcons.style.display = 'grid';
+                    desktopIcons.style.zIndex = '203';
                 }
             }, 300);
         });
@@ -435,7 +442,7 @@ function setupLaptopInteractions() {
             initialX = e.clientX - rect.left;
             initialY = e.clientY - rect.top;
             
-            window.style.zIndex = '300';
+            window.style.zIndex = '206';
         });
         
         document.addEventListener('mousemove', (e) => {
@@ -468,7 +475,7 @@ function setupLaptopInteractions() {
             if (isDragging) {
                 isDragging = false;
                 const window = header.closest('.window');
-                window.style.zIndex = '200';
+                window.style.zIndex = '205';
             }
         });
     });
