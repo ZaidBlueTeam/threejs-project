@@ -377,15 +377,21 @@ I'm fluent in German and English, friendly, helpful, reliable, and punctual. I w
                 link: "#"
             },
             {
-                icon: "🎮",
-                title: "Game Portfolio",
-                value: "View my game projects",
-                link: "#"
+                icon: "💻",
+                title: "GitHub",
+                value: "@ZaidBlueTeam",
+                link: "https://github.com/ZaidBlueTeam"
             },
             {
                 icon: "📺",
                 title: "YouTube",
-                value: "Watch my videos",
+                value: "@zaidblueteam2005",
+                link: "https://www.youtube.com/@zaidblueteam2005"
+            },
+            {
+                icon: "🎮",
+                title: "Game Portfolio",
+                value: "View my game projects",
                 link: "#"
             }
         ],

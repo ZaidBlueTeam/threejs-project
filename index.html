@@ -586,9 +586,10 @@
         }
         
         .cv-contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
             margin-top: 15px;
         }
         
@@ -599,6 +600,7 @@
             margin: 0;
             font-size: 0.85rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
         
         .cv-section {

@@ -627,8 +627,8 @@ function loadCVContent(language) {
                 <p>📧 ${cv.personal.email}</p>
                 <p>📱 ${cv.personal.phone}</p>
                 <p>📍 ${cv.personal.location}</p>
-                <p>� ${cv.personal.dateOfBirth}</p>
-                <p>�🏛️ ${cv.personal.nationality}</p>
+                ${cv.personal.age ? `<p>🎂 ${cv.personal.age}</p>` : ''}
+                ${cv.personal.nationality ? `<p>🏛️ ${cv.personal.nationality}</p>` : ''}
             </div>
         </div>
         
@@ -658,6 +658,13 @@ function loadCVContent(language) {
                 ${languagesHTML}
             </div>
         </div>
+        
+        ${cv.workStyle ? `
+        <div class="cv-section">
+            <h3>💼 ${language === 'en' ? 'Work Style & Preferences' : 'Arbeitsweise & Präferenzen'}</h3>
+            <p class="cv-summary">${cv.workStyle}</p>
+        </div>
+        ` : ''}
         
         ${cv.mobility ? `
         <div class="cv-section">
