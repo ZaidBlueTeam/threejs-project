@@ -39,7 +39,7 @@ export function createMainScene(scene) {
     baseEdge.position.y = -1.15;
     laptop.add(baseEdge);
     
-    // Laptop screen back (thicker for realism)
+    // Laptop screen back (thicker for realism) - Less tilt for better readability
     const screenBackGeometry = new THREE.BoxGeometry(7.8, 5.2, 0.3);
     const screenBackMaterial = new THREE.MeshStandardMaterial({ 
         color: 0x1a1a1a,
@@ -47,8 +47,8 @@ export function createMainScene(scene) {
         roughness: 0.2
     });
     const screenBack = new THREE.Mesh(screenBackGeometry, screenBackMaterial);
-    screenBack.position.set(0, 1.1, -2.4);
-    screenBack.rotation.x = -0.1;
+    screenBack.position.set(0, 1.5, -2.3);
+    screenBack.rotation.x = 0.05; // Reduced tilt - almost face-on
     laptop.add(screenBack);
     
     // Screen bezel (black border around screen)
@@ -57,8 +57,8 @@ export function createMainScene(scene) {
         color: 0x000000
     });
     const bezel = new THREE.Mesh(bezelGeometry, bezelMaterial);
-    bezel.position.set(0, 1.1, -2.25);
-    bezel.rotation.x = -0.1;
+    bezel.position.set(0, 1.5, -2.15);
+    bezel.rotation.x = 0.05; // Reduced tilt - almost face-on
     laptop.add(bezel);
     
     // Laptop screen (the interactive part) - with subtle glow
@@ -69,8 +69,8 @@ export function createMainScene(scene) {
         opacity: 0.9
     });
     const screen = new THREE.Mesh(screenGeometry, screenMaterial);
-    screen.position.set(0, 1.1, -2.2);
-    screen.rotation.x = -0.1;
+    screen.position.set(0, 1.5, -2.1);
+    screen.rotation.x = 0.05; // Reduced tilt - almost face-on
     laptop.add(screen);
     
     // Add subtle screen glow effect
@@ -78,12 +78,12 @@ export function createMainScene(scene) {
     const glowMaterial = new THREE.MeshBasicMaterial({
         color: 0x4488ff,
         transparent: true,
-        opacity: 0.1,
+        opacity: 0.15,
         blending: THREE.AdditiveBlending
     });
     const glow = new THREE.Mesh(glowGeometry, glowMaterial);
-    glow.position.set(0, 1.1, -2.18);
-    glow.rotation.x = -0.1;
+    glow.position.set(0, 1.5, -2.08);
+    glow.rotation.x = 0.05; // Reduced tilt - almost face-on
     laptop.add(glow);
     
     // Keyboard area
@@ -146,13 +146,13 @@ export function createMainScene(scene) {
         opacity: 0.8
     });
     const logo = new THREE.Mesh(logoGeometry, logoMaterial);
-    logo.position.set(0, 3.5, -2.5);
-    logo.rotation.x = -0.1;
+    logo.position.set(0, 4, -2.4);
+    logo.rotation.x = 0.05;
     laptop.add(logo);
 
-    // Position the laptop
+    // Position the laptop - centered and slightly angled for aesthetic
     laptop.position.set(0, 0, 0);
-    laptop.rotation.y = 0.1;
+    laptop.rotation.y = 0; // Face camera directly for better readability
     scene.add(laptop);
 
     // Store laptop reference for interaction

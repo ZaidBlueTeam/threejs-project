@@ -24,8 +24,9 @@ function init() {
     laptop = scene.userData.laptop;
     screen = scene.userData.screen;
     
-    camera.position.set(0, 2, 8);
-    camera.lookAt(0, 0, 0);
+    // Better camera position for readability - more face-on view
+    camera.position.set(0, 1.5, 10);
+    camera.lookAt(0, 1.5, 0);
 
     // Mouse movement listener
     document.addEventListener('mousemove', onMouseMove);
@@ -33,12 +34,38 @@ function init() {
     // Click listener for laptop interaction
     canvas.addEventListener('click', onCanvasClick);
     
+    // Hover effect for cursor
+    canvas.addEventListener('mousemove', onCanvasHover);
+    
     animate();
 }
 
 function onMouseMove(event) {
     mouseX = (event.clientX / window.innerWidth) * 2 - 1;
     mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+}
+
+function onCanvasHover(event) {
+    if (isLaptopMode) return;
+    
+    const mouse = new THREE.Vector2();
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    const raycaster = new THREE.Raycaster();
+    raycaster.setFromCamera(mouse, camera);
+
+    if (screen) {
+        const intersects = raycaster.intersectObject(screen);
+        if (intersects.length > 0) {
+            document.body.style.cursor = 'pointer';
+            // Make screen slightly brighter on hover
+            screen.material.color.setHex(0x002288);
+        } else {
+            document.body.style.cursor = 'default';
+            screen.material.color.setHex(0x001155);
+        }
+    }
 }
 
 function onCanvasClick(event) {
@@ -724,10 +751,19 @@ function animate() {
     requestAnimationFrame(animate);
     
     if (!isLaptopMode) {
-        // Subtle camera movement when not in laptop mode
-        camera.position.x += (mouseX * 2 - camera.position.x) * 0.02;
-        camera.position.y += (mouseY * 1 + 2 - camera.position.y) * 0.02;
-        camera.lookAt(0, 0, 0);
+        // Subtle camera movement when not in laptop mode - more stable
+        const targetX = mouseX * 1.5;
+        const targetY = mouseY * 0.8 + 1.5;
+        
+        camera.position.x += (targetX - camera.position.x) * 0.02;
+        camera.position.y += (targetY - camera.position.y) * 0.02;
+        camera.lookAt(0, 1.5, 0); // Look at screen center
+        
+        // Add subtle glow pulse to screen when hovering
+        if (screen) {
+            const glowIntensity = 0.9 + Math.sin(Date.now() * 0.001) * 0.1;
+            screen.material.opacity = glowIntensity;
+        }
     }
     
     renderer.render(scene, camera);
