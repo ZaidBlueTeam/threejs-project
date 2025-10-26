@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "A simple Three.js project to demonstrate basic scene setup and rendering.",
   "main": "src/index.js",
+  "homepage": "https://ZaidBlueTeam.github.io/threejs-project",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "three": "^0.152.0"
@@ -14,6 +17,7 @@
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.21.0",
     "babel-loader": "^9.1.2",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.3",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.4",

@@ -7,6 +7,7 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath: process.env.NODE_ENV === 'production' ? '/threejs-project/' : '/',
   },
   module: {
     rules: [
